@@ -1,0 +1,902 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container-pagina {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho-principal {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+body.home .cabecalho-principal {
+  height: 550px; 
+  background: url(Imagens/Zeus1.png) no-repeat center center/cover;
+}
+
+
+body:not(.home) .cabecalho-principal { 
+  height: 400px;
+  background: url(Imagens/Zeus4.png) no-repeat center center/cover; 
+}
+
+body.quem-sou-eu-page .cabecalho-principal {
+  background: url(Imagens/Zeus4.png) no-repeat center center/cover; /
+}
+
+body.recomendacoes-page .cabecalho-principal {
+  background: url(Imagens/Zeus10.PNG) no-repeat center center/cover; }
+
+body.galeria-page .cabecalho-principal {
+  background: url(images/banner-galeria.jpg) no-repeat center center/cover; 
+}
+
+
+.fundo-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.conteudo-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.titulo-site {
+  font-size: 80px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: none; 
+}
+
+
+.titulo-site-secao {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: none; 
+}
+
+
+body.home .titulo-site {
+  display: block; 
+}
+body:not(.home) .titulo-site-secao {
+  display: block; 
+}
+
+
+.slogan-site {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.texto-introducao { 
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 700px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px 25px;
+  border-radius: 8px;
+}
+
+
+.navegacao-principal {
+  width: 100%;
+  background-color: rgba(20, 49, 85, 0.9);
+  padding: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navegacao-principal .lista-navegacao {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.navegacao-principal .lista-navegacao a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 5px 10px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navegacao-principal .lista-navegacao a:hover,
+.navegacao-principal .lista-navegacao a:focus,
+.navegacao-principal .lista-navegacao a.active {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  transform: translateY(-2px);
+}
+
+
+.conteudo-principal {
+  flex-grow: 1;
+  padding-bottom: 50px;
+}
+
+
+body.home .secao-cartoes-informacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+body.home #secao-info-geral {
+  background-color: rgba(20, 49, 85, 1);
+}
+
+body.home #secao-galeria-recomenda {
+  background-color: rgba(39, 62, 101, 1);
+}
+
+body.home .cartao-info {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  min-height: 320px;
+}
+
+body.home .cartao-info:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+body.home .icone-cartao {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.home .titulo-cartao {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 1);
+}
+
+body.home .texto-cartao {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+body.home .botao-leia-mais {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 1);
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+body.home .botao-leia-mais:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+
+.secao-mito-detalhes {
+  padding: 60px 20px;
+  background-color: rgba(20, 49, 85, 0.95);
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+
+.titulo-principal-mito {
+  font-size: 45px;
+  font-weight: 300;
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.bloco-historia {
+  background-color: rgba(39, 62, 101, 1);
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bloco-historia:nth-child(odd) {
+  background-color: rgba(39, 62, 101, 1);
+}
+
+.bloco-historia:nth-child(even) {
+  background-color: rgba(20, 49, 85, 0.9);
+}
+
+.titulo-bloco {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  width: 100%;
+}
+
+.texto-bloco {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 750px;
+}
+
+.imagem-bloco-historia {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+}
+
+.secao-quem-sou-eu {
+  padding: 60px 20px;
+  background-color: rgba(255, 255, 255, 1);
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imagem-secao-quem-sou-eu {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(20, 49, 85, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+.titulo-secao-quem-sou-eu {
+  font-size: 50px;
+  font-weight: 700;
+  color: rgba(39, 62, 101, 1);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.texto-secao-quem-sou-eu {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+  max-width: 750px;
+  text-align: justify;
+}
+
+.secao-recomendacoes {
+  padding: 60px 20px;
+  background-color: rgba(20, 49, 85, 0.95);
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-principal-recomendacoes {
+  font-size: 45px;
+  font-weight: 300;
+  margin-bottom: 50px;
+  color: rgba(234, 228, 194, 1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.lista-categoria-recomendacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 40px;
+}
+
+.lista-categoria-recomendacao-full {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.item-recomendacao, .item-recomendacao-full {
+  background-color: rgba(39, 62, 101, 1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+}
+
+.item-recomendacao:hover, .item-recomendacao-full:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.lista-categoria-recomendacao .item-recomendacao {
+  flex: 1 1 calc(50% - 20px);
+  min-width: 300px;
+}
+
+.icone-recomendacao {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(234, 228, 194, 0.6);
+  padding: 5px;
+}
+
+.titulo-categoria-recomendacao {
+  font-size: 28px;
+  font-weight: 400;
+  color: rgba(234, 228, 194, 1);
+  margin-bottom: 20px;
+}
+
+.lista-conteudo-recomendacao {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  text-align: left;
+  width: 100%;
+}
+
+.lista-conteudo-recomendacao li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.lista-conteudo-recomendacao li::before {
+  content: "•";
+  color: rgba(234, 228, 194, 0.8);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
+}
+
+
+.secao-galeria {
+  padding: 60px 20px;
+  background-color: rgba(255, 255, 255, 1); 
+  color: #333;
+  text-align: center;
+}
+
+.titulo-principal-galeria {
+  font-size: 45px;
+  font-weight: 700;
+  color: rgba(39, 62, 101, 1);
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+   gap: 25px; 
+  max-width: 1100px; 
+  margin: 0 auto; 
+}
+
+.galeria-item {
+  position: relative;
+  overflow: hidden; 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.galeria-item:hover {
+  transform: translateY(-5px) scale(1.02); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.imagem-galeria {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover; 
+  display: block; 
+  border-radius: 10px;
+}
+
+.galeria-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(39, 62, 101, 0.85); 
+  color: rgba(255, 255, 255, 0.95);
+  padding: 15px 10px;
+  opacity: 0; 
+  transform: translateY(100%); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.galeria-item:hover .galeria-overlay {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+.legenda-galeria {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+}
+
+
+
+.rodape-principal {
+  width: 100%;
+  background-color: rgba(20, 49, 85, 1);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  border-top: 1px solid rgba(39, 62, 101, 1);
+  margin-top: auto;
+}
+
+
+@media (max-width: 992px) {
+ 
+  .slogan-site {
+      font-size: 22px;
+  }
+  .texto-introducao {
+      font-size: 1.1rem;
+  }
+
+ 
+  body.home .cabecalho-principal {
+      height: 500px;
+  }
+  body:not(.home) .cabecalho-principal {
+      height: 350px;
+  }
+
+ 
+  body.home .titulo-site {
+      font-size: 65px;
+  }
+  body:not(.home) .titulo-site-secao {
+      font-size: 50px;
+  }
+
+ 
+  .navegacao-principal .lista-navegacao {
+      gap: 20px;
+  }
+  .navegacao-principal .lista-navegacao a {
+      font-size: 18px;
+  }
+
+ 
+  body.home .cartao-info {
+      max-width: 45%;
+  }
+
+  
+  .titulo-principal-mito {
+      font-size: 40px;
+  }
+  .titulo-bloco {
+      font-size: 28px;
+  }
+
+ 
+  .imagem-secao-quem-sou-eu {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 30px;
+  }
+  .titulo-secao-quem-sou-eu {
+      font-size: 40px;
+      margin-bottom: 25px;
+  }
+  .texto-secao-quem-sou-eu {
+      font-size: 17px;
+  }
+
+  
+  .titulo-principal-recomendacoes {
+      font-size: 40px;
+      margin-bottom: 40px;
+  }
+  .lista-categoria-recomendacao {
+      gap: 30px;
+  }
+  .item-recomendacao {
+      padding: 25px;
+  }
+  .icone-recomendacao {
+      width: 80px;
+      height: 80px;
+  }
+  .titulo-categoria-recomendacao {
+      font-size: 24px;
+  }
+  .lista-conteudo-recomendacao {
+      font-size: 17px;
+  }
+
+ 
+  .titulo-principal-galeria {
+      font-size: 40px;
+      margin-bottom: 40px;
+  }
+  .galeria-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+      gap: 20px;
+  }
+  .imagem-galeria {
+      height: 250px; 
+  }
+}
+
+@media (max-width: 768px) {
+
+  body.home .cabecalho-principal {
+      height: 450px;
+      padding-bottom: 10px;
+  }
+  body:not(.home) .cabecalho-principal {
+      height: 300px;
+      padding-bottom: 10px;
+  }
+
+  
+  body.home .titulo-site {
+      font-size: 55px;
+  }
+  body:not(.home) .titulo-site-secao {
+      font-size: 40px;
+  }
+
+  .slogan-site {
+      font-size: 20px;
+  }
+  .texto-introducao {
+      font-size: 1rem;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+  }
+
+  
+  .navegacao-principal {
+      padding: 10px 0;
+      border-radius: 5px;
+  }
+  .navegacao-principal .lista-navegacao {
+      flex-direction: column;
+      gap: 8px;
+      padding: 0 10px;
+  }
+  .navegacao-principal .lista-navegacao a {
+      font-size: 16px;
+  }
+
+  
+  body.home .secao-cartoes-informacao {
+      padding: 30px 15px;
+  }
+  body.home .cartao-info {
+      max-width: 100%;
+      padding: 25px;
+      min-height: auto;
+  }
+  body.home .icone-cartao {
+      width: 80px;
+      height: 80px;
+  }
+  body.home .titulo-cartao {
+      font-size: 24px;
+  }
+  body.home .texto-cartao {
+      font-size: 15px;
+  }
+  body.home .botao-leia-mais {
+      padding: 10px 20px;
+      font-size: 16px;
+  }
+
+  .titulo-principal-mito {
+      font-size: 35px;
+      margin-bottom: 40px;
+  }
+  .bloco-historia {
+      padding: 30px 20px;
+      margin: 20px auto;
+  }
+  .titulo-bloco {
+      font-size: 24px;
+  }
+  .texto-bloco {
+      font-size: 16px;
+      margin-bottom: 20px;
+  }
+  .imagem-bloco-historia {
+      width: 120px;
+      height: 120px;
+  }
+
+ 
+  .secao-quem-sou-eu {
+      padding: 40px 15px;
+      margin: 20px auto;
+  }
+  .imagem-secao-quem-sou-eu {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 25px;
+  }
+  .titulo-secao-quem-sou-eu {
+      font-size: 35px;
+      margin-bottom: 20px;
+  }
+  .texto-secao-quem-sou-eu {
+      font-size: 16px;
+      margin-bottom: 20px;
+  }
+
+  
+  .titulo-principal-recomendacoes {
+      font-size: 35px;
+  }
+  .lista-categoria-recomendacao {
+      gap: 20px;
+  }
+  .lista-categoria-recomendacao .item-recomendacao {
+      flex: 1 1 100%;
+      max-width: 400px;
+  }
+  .lista-categoria-recomendacao-full .item-recomendacao-full {
+      max-width: 400px;
+  }
+  .icone-recomendacao {
+      width: 70px;
+      height: 70px;
+  }
+  .titulo-categoria-recomendacao {
+      font-size: 22px;
+  }
+  .lista-conteudo-recomendacao {
+      font-size: 16px;
+  }
+
+  
+  .titulo-principal-galeria {
+      font-size: 35px;
+  }
+  .galeria-grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+     gap: 15px;
+  }
+  .imagem-galeria {
+      height: 220px;
+  }
+  .galeria-overlay {
+      padding: 10px 8px;
+  }
+  .legenda-galeria {
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  body.home .cabecalho-principal {
+      height: 400px;
+  }
+  body:not(.home) .cabecalho-principal {
+      height: 250px;
+  }
+
+ 
+  body.home .titulo-site {
+      font-size: 45px;
+  }
+  body:not(.home) .titulo-site-secao {
+      font-size: 30px;
+  }
+  .slogan-site {
+      font-size: 18px;
+  }
+  .texto-introducao {
+      font-size: 0.9rem;
+  }
+
+  .navegacao-principal .lista-navegacao a {
+      font-size: 14px;
+  }
+
+
+  body.home .cartao-info {
+      padding: 20px;
+  }
+  body.home .icone-cartao {
+      width: 70px;
+      height: 70px;
+  }
+  body.home .titulo-cartao {
+      font-size: 20px;
+  }
+  body.home .texto-cartao {
+      font-size: 14px;
+  }
+  body.home .botao-leia-mais {
+      font-size: 14px;
+      padding: 8px 18px;
+  }
+
+
+  .titulo-principal-mito {
+      font-size: 30px;
+  }
+  .bloco-historia {
+      padding: 25px 15px;
+  }
+  .titulo-bloco {
+      font-size: 20px;
+  }
+  .texto-bloco {
+      font-size: 15px;
+  }
+  .imagem-bloco-historia {
+      width: 100px;
+      height: 100px;
+  }
+
+  .imagem-secao-quem-sou-eu {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+  }
+  .titulo-secao-quem-sou-eu {
+      font-size: 30px;
+      margin-bottom: 15px;
+  }
+  .texto-secao-quem-sou-eu {
+      font-size: 15px;
+      margin-bottom: 15px;
+  }
+
+  .titulo-principal-recomendacoes {
+      font-size: 30px;
+  }
+  .item-recomendacao, .item-recomendacao-full {
+      padding: 20px;
+  }
+  .icone-recomendacao {
+      width: 60px;
+      height: 60px;
+  }
+  .titulo-categoria-recomendacao {
+      font-size: 20px;
+  }
+  .lista-conteudo-recomendacao {
+      font-size: 15px;
+  }
+
+
+  .titulo-principal-galeria {
+      font-size: 30px;
+  }
+  .galeria-grid {
+      grid-template-columns: 1fr; 
+      gap: 15px;
+  }
+  .imagem-galeria {
+      height: 200px;
+  }
+  .legenda-galeria {
+      font-size: 14px;
+  }
+}
